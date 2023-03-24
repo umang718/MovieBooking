@@ -5,6 +5,7 @@ import Home from './pages/home/home';
 import MovieList from './components/movieList/movieList';
 import Movie from './pages/movieDetail/movie';
 import Login from './components/Login/login.js';
+import Book from './pages/book.js';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/*" element={<h1>Error Page</h1>}></Route>
                 <Route path="/sign-in" element={<Login />}></Route>
                 <Route path="/sign-up" element={<h1>Sign up</h1>}></Route>
+                <Route path="/bookTicket/:id" element={<Book />}></Route>
             </Routes>
         </Router>
     </div>

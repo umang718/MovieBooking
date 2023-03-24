@@ -33,7 +33,7 @@ const Movie = () => {
                         <div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                         <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                         <div className="movie__rating">
-                            {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i class="fas fa-star" />
+                            {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i className="fas fa-star" />
                             <span className="movie__voteCount">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
                         </div>  
                         <div className="movie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
@@ -43,7 +43,7 @@ const Movie = () => {
                                 currentMovieDetail && currentMovieDetail.genres
                                 ? 
                                 currentMovieDetail.genres.map(genre => (
-                                    <><span className="movie__genre" id={genre.id}>{genre.name}</span></>
+                                    <span className="movie__genre" key = { genre.id } id={genre.id}>{genre.name}</span>
                                 )) 
                                 : 
                                 ""
@@ -62,6 +62,7 @@ const Movie = () => {
                 {
                     currentMovieDetail && currentMovieDetail.homepage && <a href={currentMovieDetail.homepage} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__homeButton movie__Button">Homepage <i className="newTab fas fa-external-link-alt"></i></span></p></a>
                 }
+                <a className = "bg-info text-white text-decoration-none movie__homeButton movie__Button" href = { "/bookTicket/" + id }>Book&nbsp;Ticket</a>
                 {
                     currentMovieDetail && currentMovieDetail.imdb_id && <a href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">IMDb<i className="newTab fas fa-external-link-alt"></i></span></p></a>
                 }
@@ -70,7 +71,7 @@ const Movie = () => {
             <div className="movie__production">
                 {
                     currentMovieDetail && currentMovieDetail.production_companies && currentMovieDetail.production_companies.map(company => (
-                        <>
+                        <div key = { company.logo_path }>
                             {
                                 company.logo_path 
                                 && 
@@ -79,7 +80,7 @@ const Movie = () => {
                                     <span>{company.name}</span>
                                 </span>
                             }
-                        </>
+                        </div>
                     ))
                 }
             </div>

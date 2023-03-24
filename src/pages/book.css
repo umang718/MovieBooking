@@ -1,0 +1,36 @@
+#ram {
+    background-color: blue;
+    /* trainsition Properties */
+    transition-duration: 1s;
+}
+
+#ram:hover {
+    background-color: red;
+}
+
+#screenContainer {
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.screens {
+    height: 100px;
+    background-color: white;
+    width: 33%;
+    display: flex;
+    border: 0px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition-duration: .3s;
+}
+
+.screens:hover {
+    height: 100px;
+    background-color: blue;
+    color:white;
+    width: 33%;
+}
